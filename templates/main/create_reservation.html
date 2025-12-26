@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Reservation{% endblock %}
+
+{% block content %}
+<h2>Create a Reservation</h2>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="service">Select Service:</label>
+    <select name="service" id="service" required>
+        {% for s in services %}
+            <option value="{{ s.id }}">{{ s.name }} - {{ s.duration }} min - ${{ s.price }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <label for="time_slot">Select Time Slot:</label>
+    <select name="time_slot" id="time_slot" required>
+        {% for t in time_slots %}
+            <option value="{{ t.id }}">{{ t.date }} {{ t.start_time }} - {{ t.end_time }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <button type="submit" style="padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:5px;">Book</button>
+</form>
+
+{% endblock %}
