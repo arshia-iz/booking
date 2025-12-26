@@ -33,8 +33,8 @@ Follow the steps below to run the project on your local machine.
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/USERNAME/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/arshia-iz/booking.git
+cd booking
 2️⃣ Create a virtual environment
 bash
 Copy code
@@ -86,7 +86,7 @@ http://127.0.0.1:8000/admin/
 csharp
 Copy code
 booking/
-│── booking/          # Project settings
+│── core/          # Project settings
 │── expense/          # Main app (booking & reservations)
 │── templates/        # HTML templates
 │── static/           # Static files
@@ -96,7 +96,7 @@ booking/
 ❗ Notes
 SQLite is used as the default database.
 
-No environment variables are required to run this project.
+No environment variables are required.
 
 This project is intended for learning and educational purposes.
 
